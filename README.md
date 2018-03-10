@@ -154,7 +154,7 @@ console.log(mySet.difference(mySet2).list());   // [ 'b', 'g', 'h' ]
 ```
 
 
-### Priority Queue <a name="qQueue"></a> 
+### Priority Queue <a name="pQueue"></a> 
 ![Priority Queue](pics/pQueue.jpg)
 ```javascript
     function priorityQueue() { // Queue with highest priority get out first no matter when added
