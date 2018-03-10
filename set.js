@@ -1,76 +1,78 @@
-function mySet() {
-    // the var collection will hold the set
-    var collection = [];
-    // this method will check for the presence of an element and return true or false
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
-    // this method will return all the values in the set
-    this.values = function() {
-        return collection;
-    };
-    // this method will add an element to the set
-    this.add = function(element) {
-        if(!this.has(element)){
-            collection.push(element);
-            return true;
+const Set = function() {
+    let set = [];
+    this.exist = function(element) { // check if element is in set return true, else return false
+        return (set.indexOf(element) !== -1)
+    }
+    this.add = function(element) { // add element to set if not exist, do not add if it exists
+        if(!this.exist(element)) {
+            set.push(element);
+            return `${element} is added to set!`;
         }
-        return false;
-    };
-    // this method will remove an element from a set
-    this.remove = function(element) {
-        if(this.has(element)){
-            index = collection.indexOf(element);
-            collection.splice(index,1);
-            return true;
+    }
+    this.list = function() { // list all element in set
+        return set;
+    }
+    this.remove = function(element) { // remove an element if it's in set
+        if(this.exist(element)) {
+            set.splice(set.indexOf(element), 1);
+            return `${element} is removed from set!`;
+        } else { return `${element} is not in set!`; }
+    }
+    this.length = function() { // return number of element in set
+        return set.length;
+    }
+    this.union = function(setC) { // return the union set of two sets
+        let union = new Set();
+        let setA = this.list();
+        let setB = setC.list();
+        for(let i = 0; i < setA.length; i++) {
+            union.add(setA[i]);
         }
-        return false;
-    };
-    // this method will return the size of the collection
-    this.size = function() {
-        return collection.length;
-    };
-    // this method will return the union of two sets
-    this.union = function(otherSet) {
-        var unionSet = new mySet();
-        var firstSet = this.values();
-        var secondSet = otherSet.values();
-        firstSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        secondSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        return unionSet;
-    };
-    // this method will return the intersection of two sets as a new set
-    this.intersection = function(otherSet) {
-        var intersectionSet = new mySet();
-        var firstSet = this.values();
-        firstSet.forEach(function(e){
-            if(otherSet.has(e)){
-                intersectionSet.add(e);
+        for(let j = 0; j < setB.length; j++) {
+            union.add(setB[j]);
+        }
+        return union;
+    }
+    this.intersect = function(setC) { // return a set of intersection of 2 sets
+        let intersect = new Set();
+        let setA = this;
+        let setB = setC.list();
+        for(let i = 0; i < setB.length; i++) {
+            if(setA.exist(setB[i])) {
+                intersect.add(setB[i])
             }
-        });
-        return intersectionSet;
-    };
-    // this method will return the difference of two sets as a new set
-    this.difference = function(otherSet) {
-        var differenceSet = new mySet();
-        var firstSet = this.values();
-        firstSet.forEach(function(e){
-            if(!otherSet.has(e)){
-                differenceSet.add(e);
-            }
-        });
-        return differenceSet;
-    };
-    // this method will test if the set is a subset of a different set
-    this.subset = function(otherSet) {
-        var firstSet = this.values();
-        return firstSet.every(function(value) {
-            return otherSet.has(value);
-        });
-    };
+        }
+        return intersect;
+    }
+    this.difference = function(setC) { // return a set of difference of 2 sets
+        let setA = this;
+        let difference = setA.union(setC);
+        let setB = setA.intersect(setC).list();
+        for(let i = 0; i < setB.length; i++) {
+            difference.remove(setB[i]);
+        }
+        return difference;
+        
+    }
 }
+
+const mySet = new Set();
+console.log(mySet.add('a'));                    // a is added to set!
+console.log(mySet.exist('a'));                  // true
+console.log(mySet.exist('b'));                  // false
+console.log(mySet.list());                      // [ 'a' ]
+console.log(mySet.add('b'));                    // b is added to set!
+console.log(mySet.add('c'));                    // c is added to set!
+console.log(mySet.remove('c'));                 // c is added to set!
+console.log(mySet.list());                      // [ 'a', 'b' ]
+console.log(mySet.length());                    // 2
+const mySet2 = new Set();
+console.log(mySet2.add('a'));                   // a is added to set!
+console.log(mySet2.add('g'));                   // g is added to set!
+console.log(mySet2.add('h'));                   // h is added to set!
+console.log(mySet2.list());                     // [ 'a', 'g', 'h' ]
+console.log(mySet.union(mySet2).list());        // [ 'a', 'b', 'g', 'h' ]
+console.log(mySet.intersect(mySet2).list());    // [ 'a' ]
+console.log(mySet.difference(mySet2).list());   // [ 'b', 'g', 'h' ]
+
 
