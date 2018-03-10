@@ -112,7 +112,7 @@ console.log(mySet.exist('b'));                  // false
 console.log(mySet.list());                      // [ 'a' ]
 console.log(mySet.add('b'));                    // b is added to set!
 console.log(mySet.add('c'));                    // c is added to set!
-console.log(mySet.remove('c'));                 // c is added to set!
+console.log(mySet.remove('c'));                 // c is removed from set!
 console.log(mySet.list());                      // [ 'a', 'b' ]
 console.log(mySet.length());                    // 2
 const mySet2 = new Set();
