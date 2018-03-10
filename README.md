@@ -41,4 +41,4 @@
     console.log(myStack.bottom());      // a
     console.log(myStack.length());      // 2
 ```
-* Javascript array object has all Stack data structure attributes and methods
+* Javascript array object has all Stack data structure attributes and methods. However, we can always implement a stack data structure by ourself and add more property/method as we want.
