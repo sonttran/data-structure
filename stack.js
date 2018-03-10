@@ -1,4 +1,4 @@
-const Stack = function() {
+const Stack = function() { // first in, last out (FILO)
     let count = 0;
     let content = {};
     this.push = function(value) { // add value on top of the stack
@@ -17,6 +17,10 @@ const Stack = function() {
         if(count === 0 ) { return undefined }
         return content[count-1]
     }
+    this.peek = function() {  // same with top, return the value on top of the stack
+        if(count === 0 ) { return undefined }
+        return content[count-1]
+    }
     this.bottom = function() { // return the value at the bottom of the stack
         if(count === 0 ) { return undefined }
         return content['0']
@@ -30,6 +34,7 @@ console.log(myStack.push('b'));     // undefined
 console.log(myStack.push('c'));     // undefined
 console.log(myStack.pop());         // c
 console.log(myStack.top());         // b
+console.log(myStack.peek());        // b
 console.log(myStack.bottom());      // a
 console.log(myStack.length());      // 2
 
