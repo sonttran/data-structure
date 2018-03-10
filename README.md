@@ -46,7 +46,7 @@
 
 
 ### Set <a name="set"></a>
-![Set](pics/set.npg)
+![Set](pics/set.png)
 ```javascript
 const Set = function() {
     let set = [];
