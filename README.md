@@ -197,5 +197,5 @@
 
 
 ### Binary search tree <a name="btree"></a> 
-![Binary search tree](pics/btree.jpg)
+![Binary search tree](pics/btree.JPG)
 
