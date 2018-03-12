@@ -1,0 +1,27 @@
+{
+  "name": "data-structure",
+  "version": "1.0.0",
+  "description": "## Content * [Stack](#stack) * [Set](#set) * [Queue](#queue) * [Priority queue](#pQueue) * [Binary search tree](#btree)",
+  "main": "binarySearchTree.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonttran/data-structure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonttran/data-structure/issues"
+  },
+  "homepage": "https://github.com/sonttran/data-structure#readme",
+  "devDependencies": {
+    "mocha": "^5.0.4",
+    "mocha.parallel": "^0.15.5",
+    "should": "^13.2.1"
+  }
+}

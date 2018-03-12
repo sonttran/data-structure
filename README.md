@@ -5,7 +5,7 @@
 * [Set](#set)
 * [Queue](#queue)
 * [Priority queue](#pQueue)
-* [Binary tree](#btree)
+* [Binary search tree](#btree)
 
 ### Stack <a name="stack"></a> 
 ![Stack](pics/stack.jpeg)
@@ -196,5 +196,6 @@
 ```
 
 
-### Binary tree <a name="btree"></a> 
-![Binary tree](pics/btree.jpeg)
+### Binary search tree <a name="btree"></a> 
+![Binary search tree](pics/btree.jpg)
+
