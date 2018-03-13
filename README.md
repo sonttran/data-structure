@@ -477,7 +477,7 @@
         for (var i = 0; i < string.length; i++) {
             hash += string.charCodeAt(i);
         }
-        return hash % max;
+        return hash % max; // simple hash function return value from 0 to max
     };
 
     let HashTable = function() {
