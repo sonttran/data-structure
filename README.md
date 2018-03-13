@@ -199,6 +199,10 @@
 ### Binary search tree <a name="btree"></a>
 ![Binary search tree](pics/btree.JPG)
 * Search item in tree fast O(log n), find min and max, inOrder, preOrder, postOrder, levelOrder
+* preOrder used when need to explore the roots before inspecting any leaves
+* postOrder used when need to explore all the leaves before any nodes
+* inOrder used when need to flatten the tree back into its sequence (bottom up)
+* levelOrder used when need to inspect nodes at height level
 ```javascript
     const util = require('util')
 
