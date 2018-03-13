@@ -198,6 +198,7 @@
 
 ### Binary search tree <a name="btree"></a>
 ![Binary search tree](pics/btree.JPG)
+* Search item in tree fast O(log n), find min and max, inOrder, preOrder, postOrder, levelOrder
 ```javascript
     const util = require('util')
 
