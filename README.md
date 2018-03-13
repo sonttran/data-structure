@@ -368,7 +368,7 @@
     myBt.add(2.2);
     myBt.add(1.4);
     myBt.add(1.7); 
-    //console.log(util.inspect(myBt, {showHidden: false, depth: null}));
+    console.log(util.inspect(myBt, {showHidden: false, depth: null}));
     //    {
     //        root    : {
     //            data    : 4,
