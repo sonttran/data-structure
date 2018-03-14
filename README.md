@@ -704,7 +704,7 @@
                 length++;
             }
         }
-        this.removeAt = function(index) {
+        this.removeAt = function(index) { // remove element at index
             let currentNode = head;
             let currentIndex = 0;
             let previousNode;
