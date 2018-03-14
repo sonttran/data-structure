@@ -532,14 +532,14 @@
     };
 
 
-    console.log(hash('quincy', 10))
+    console.log(hash('quincy', 10)) // 5
     let ht = new HashTable();
     ht.add('beau', 'person');
     ht.add('fido', 'dog');
     ht.add('rex', 'dinosour');
     ht.add('tux', 'penguin')
-    console.log(ht.lookup('tux'))
-    ht.print();
+    console.log(ht.lookup('tux'))   // penguin
+    ht.print();                     // [ <1 empty item>,[ [ 'beau', 'person' ], [ 'tux', 'penguin' ] ], [ [ 'fido', 'dog' ] ], [ [ 'rex', 'dinosour' ] ] ]
 ```
 
 ### Map<a name="map"></a>
