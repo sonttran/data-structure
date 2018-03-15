@@ -9,6 +9,7 @@
 * [Hash tables](#htable)
 * [Map](#map)
 * [Linked list](#llist)
+* [Trie](#trie)
 
 ### Stack <a name="stack"></a> 
 ![Stack](pics/stack.jpeg)
@@ -749,3 +750,9 @@
     console.log(myll.removeAt(2));      // undefined
     console.log(util.inspect(myll.head(), {showHidden: false, depth: null})); // Node {element: 'lalala',next: Node {element: 12,next: Node { element: 34, next: Node { element: 43, next: null } } } }
 ```
+
+
+### Trie <a name="trie"></a> 
+![Trie](pics/trie.png)
+* An use case is to validate if a word in the dictionary
+```javascript
