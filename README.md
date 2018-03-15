@@ -840,7 +840,7 @@
 * Node at index `l` has parent node at index `roundDown(l/2)`
 * [Online heap and array representation](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
 * [Online interacting heap creation](https://visualgo.net/en/heap)
-![Heap2](pics/heap2.jpg)
+![Heap2](pics/heap2.png)
 * Heap valuable feature: min and max sorting. With the worst case performance of `O(nlogn)`
 
 ```javascript
