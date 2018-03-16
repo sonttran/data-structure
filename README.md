@@ -12,6 +12,7 @@
 * [Trie](#trie)
 * [Heap](#heap)
 * [Graph](#graph)
+* [Big O notation](#bigo)
 
 ### Stack <a name="stack"></a> 
 ![Stack](pics/stack.jpeg)
@@ -1069,4 +1070,48 @@ const incidenceMatrix = [
         }
         return nodesLen;
     };
+```
+
+### Big O notation <a name="bigo"></a>
+* Simplify analysis of algoritm's efficiency
+* Complexity in term of input size, N
+* Machine independent, basic computer step
+* Analyze time and space of worst case scenario
+* Ignore constant `5n -> O(n)`
+* Cetain terms dominate others `O(1) < O(logn) < O(n) < O(nlogn) < O(n^2) < O(2^n) < O(n!)`
+![Big O](pics/bigo.png)
+```javascript
+    x = 5 + 15 * 20;        // O(1) independent of input size (input are constants)
+
+    x = 5 + 15 * 20;
+    y = 9 - 6;
+    console.log(x + y)      // total time = O(1) + O(1) + O(1) = 3O(1) = O(1) (constants are dropped)
+
+    for(let i = 0; i < N; i++) {
+        console.log(i)
+    }                       // total time = N * O(1) = O(N) (input now is N, not constant)
+
+    y = 32 + 6
+    for(let i = 0; i < N; i++) {
+        console.log(i)
+    }                       // total time = O(1) + N * O(1) = O(N) (low order term is dropped)
+
+
+    y = 32 + 6
+    for(let i = 0; i < N; i++) {
+        console.log(i)
+    }   
+    for(let i = 0; i < N; i++) {
+        for(let j = 0; i < N; i++) {
+            console.log(j);
+        }   
+    }                       // total time = max(O(1), O(N), O(N^2)) = O(N^2) (O(N^2) dominates)
+
+    if(x > 0) { 
+        // O(1)
+    } else if(x < 0) {
+        // O(logn)
+    } else {
+        // O(n^2)
+    }                       // total time = O(n^2) (big O considers worst case scenario)
 ```
