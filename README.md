@@ -11,6 +11,7 @@
 * [Linked list](#llist)
 * [Trie](#trie)
 * [Heap](#heap)
+* [Graph](#graph)
 
 ### Stack <a name="stack"></a> 
 ![Stack](pics/stack.jpeg)
@@ -994,5 +995,78 @@
             };
             return result;
         };
+    };
+```
+
+### Graph <a name="graph"></a> 
+![Graph](pics/graph.png)
+* Graph is collection of things and relationship between them
+* Data in graph is called node(vertices) and connection between nodes called edges
+* There are two major types of graphs: `directed` and `undirected`
+* `directed` graph is graph with direction (e.g. social network)
+* `undirected` graph is graph with direction (e.g. webpage links)
+![Graph2](pics/graph2.gif)
+* Representation of graph: `adjacency list`, `adjacency matrix` can represent direction, `incidence matrix` (row are nodes, column are edges)
+```javascript
+const adjacencyList = [
+    [ 1, 2 ],   // node 1
+    [ 0 ],      // node 2
+    [ 2 ],      // node 3
+];
+
+const adjacencyMatrix = [
+    [ 0, 1, 1 ],   // node 1
+    [ 0, 0, 0 ],   // node 2
+    [ 1, 0, 0 ],   // node 3
+]
+
+const incidenceMatrix = [
+    [ 0, 1, -1 ],   
+    [ 0, 0, 0 ],
+    [ -1, 0, 0 ],
+]
+```
+![Graph3](pics/graph3.gif)
+![Graph4](pics/graph4.jpg)
+* Graph traversal: `breadth-first search`, `depth-first search`
+![breadth-first search](pics/graph5.png)
+```javascript
+    var exBFSGraph = [ // adjagency representation of a graph
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 0, 0],
+        [1, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0],
+        [0, 1, 0, 0, 0]
+    ];
+    console.log(bfs(exBFSGraph, 1)); // distance between node 1 to other nodes
+    // { '0': 2, '1': 0, '2': 1, '3': 3, '4': Infinity }
+
+
+    function bfs(graph, root) {
+        var nodesLen = {};
+        for (var i = 0; i < graph.length; i++) {
+            nodesLen[i] = Infinity;
+        }
+        nodesLen[root] = 0; 
+        var queue = [root]; 
+        var current; 
+        while (queue.length != 0) {
+            current = queue.shift();
+
+            var curConnected = graph[current];
+            var neighborIdx = []; 
+            var idx = curConnected.indexOf(1); 
+            while (idx != -1) {
+                neighborIdx.push(idx); 
+                idx = curConnected.indexOf(1, idx + 1); 
+            }
+            for (var j = 0; j < neighborIdx.length; j++) {
+                if (nodesLen[neighborIdx[j]] == Infinity) {
+                    nodesLen[neighborIdx[j]] = nodesLen[current] + 1;
+                    queue.push(neighborIdx[j]); 
+                }
+            }
+        }
+        return nodesLen;
     };
 ```
